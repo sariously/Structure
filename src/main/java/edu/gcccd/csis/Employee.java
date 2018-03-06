@@ -23,14 +23,21 @@ public class Employee {
 
     /*
      * To be considered equal, employees must have the same name, organization, and birthday
+     * First, check identity, then check if the Object being passed in is an instance of Employee
      */
 
     @Override
     public boolean equals(Object o){
-        Employee e = (Employee) o;
-        return (this.name.equals(e.name) &&
-                this.org.equals(e.org) &&
-                this.birthday.equals(e.birthday));
+        if(this == o){
+            return true;
+        }
+        if(o instanceof Employee) {
+            Employee e = (Employee) o;
+            return (this.name.equals(e.name) &&
+                    this.org.equals(e.org) &&
+                    this.birthday.equals(e.birthday));
+        }
+        return false;
 
     }
 }

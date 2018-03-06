@@ -37,9 +37,15 @@ public class Organization {
      * To be considered equal, organization must have same name and number of employees
      */
     public boolean equals(Object o){
-        Organization org = (Organization) o;
-        return this.orgName.equals(org.getOrgName()) &&
-                this.employeeCount == org.employeeCount;
+        if(this == o){
+            return true;
+        }
+        if(o instanceof Organization) {
+            Organization org = (Organization) o;
+            return this.orgName.equals(org.getOrgName()) &&
+                    this.employeeCount == org.employeeCount;
+        }
+        return false;
 
     }
 }

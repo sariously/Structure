@@ -105,4 +105,7 @@ public class StructureTest {
         assertTrue((c1.getOrgName() !=null) && c1.getEmployeeCount() > 0 );
 
     }
+
+    
+
 }
